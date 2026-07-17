@@ -1,9 +1,4 @@
-import { NextResponse } from "next/server";
-
-export const dynamic = "force-static";
-export const revalidate = 3600;
-
-const SITEMAP = `<?xml version="1.0" encoding="UTF-8"?>
+export const SITEMAP_XML = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://instagramplusmodapk.com/</loc>
@@ -176,13 +171,8 @@ const SITEMAP = `<?xml version="1.0" encoding="UTF-8"?>
 </urlset>
 `;
 
-export function GET() {
-  return new NextResponse(SITEMAP, {
-    status: 200,
-    headers: {
-      "Content-Type": "application/xml; charset=utf-8",
-      "Cache-Control": "public, max-age=3600, must-revalidate",
-      "X-Content-Type-Options": "nosniff",
-    },
-  });
-}
+export const ROBOTS_TXT = `User-agent: *
+Allow: /
+
+Sitemap: https://instagramplusmodapk.com/sitemap.xml
+`;
