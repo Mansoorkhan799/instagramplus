@@ -23,6 +23,7 @@ export function FeatureCard({ feature, priority = false }: FeatureCardProps) {
           className="object-cover object-top transition duration-400 group-hover:scale-[1.04]"
           priority={priority}
           fetchPriority={priority ? "high" : "auto"}
+          loading={priority ? "eager" : "lazy"}
         />
         <div className="pointer-events-none absolute inset-x-0 bottom-0 bg-gradient-to-t from-[#0b1014]/95 via-[#0b1014]/50 to-transparent px-3 pb-3 pt-10">
           <h3 className="truncate text-sm font-semibold text-white sm:text-[15px]">

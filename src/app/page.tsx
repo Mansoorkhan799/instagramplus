@@ -37,7 +37,6 @@ export const metadata: Metadata = {
 };
 
 export default function HomePage() {
-  const highlightFeatures = FEATURES.slice(0, 8);
   const homeFaqs = FAQ_ITEMS.slice(0, 6);
   const heroFeatures = [
     FEATURES.find((f) => f.slug === "preview-stories")!,
@@ -45,6 +44,12 @@ export default function HomePage() {
     FEATURES.find((f) => f.slug === "spotlight-story")!,
     FEATURES.find((f) => f.slug === "custom-app-icon")!,
   ];
+  const heroSlugs = new Set(heroFeatures.map((f) => f.slug));
+  // Keep hero images out of this grid so the LCP asset isn't re-registered as lazy.
+  const highlightFeatures = FEATURES.filter((f) => !heroSlugs.has(f.slug)).slice(
+    0,
+    8,
+  );
 
   return (
     <>
@@ -116,7 +121,7 @@ export default function HomePage() {
                     className="object-cover object-top transition duration-500 group-hover:scale-[1.03]"
                     priority={i === 0}
                     fetchPriority={i === 0 ? "high" : "auto"}
-                    loading={i === 0 ? "eager" : undefined}
+                    loading="eager"
                   />
                 </div>
               </Link>
