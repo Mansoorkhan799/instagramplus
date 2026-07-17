@@ -1,26 +1,234 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --bg: #0b1014;
+  --bg-soft: #11181f;
+  --bg-elevated: #151d26;
+  --bg-muted: #1a2430;
+  --fg: #f4f7fa;
+  --fg-secondary: rgba(244, 247, 250, 0.68);
+  --fg-muted: rgba(244, 247, 250, 0.45);
+  --border: rgba(255, 255, 255, 0.08);
+  --border-strong: rgba(255, 255, 255, 0.16);
+  --cta: #0095f6;
+  --cta-hover: #1877f2;
+  --accent: #e1306c;
+  --link: #4fc3f7;
+  --warning-bg: rgba(245, 158, 11, 0.1);
+  --warning-border: rgba(245, 158, 11, 0.35);
+  --warning-text: #fbbf24;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-background: var(--bg);
+  --color-foreground: var(--fg);
+  --font-sans: var(--font-body);
+  --font-display: var(--font-display);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+* {
+  box-sizing: border-box;
+}
+
+html {
+  background-color: #0b1014;
+}
+
+html[data-scroll-behavior="smooth"] {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  position: relative;
+  isolation: isolate;
+  min-height: 100%;
+  color: var(--fg);
+  font-family: var(--font-body), system-ui, sans-serif;
+  line-height: 1.6;
+  background-color: #0b1014;
+}
+
+/* One continuous mesh gradient behind every page — not per-section */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background-color: #0b1014;
+  background-image:
+    radial-gradient(
+      90% 70% at 8% 0%,
+      rgba(180, 40, 140, 0.42) 0%,
+      rgba(120, 30, 120, 0.18) 35%,
+      transparent 65%
+    ),
+    radial-gradient(
+      80% 60% at 92% 12%,
+      rgba(55, 50, 140, 0.38) 0%,
+      rgba(40, 55, 130, 0.16) 40%,
+      transparent 68%
+    ),
+    radial-gradient(
+      70% 55% at 100% 100%,
+      rgba(180, 90, 40, 0.22) 0%,
+      rgba(120, 60, 30, 0.1) 40%,
+      transparent 70%
+    ),
+    radial-gradient(
+      60% 45% at 40% 85%,
+      rgba(70, 40, 120, 0.12) 0%,
+      transparent 60%
+    );
+}
+
+.font-display {
+  font-family: var(--font-display), system-ui, sans-serif;
+  letter-spacing: -0.03em;
+}
+
+.ig-text-gradient {
+  background-image: linear-gradient(
+    115deg,
+    #f58529 0%,
+    #dd2a7b 45%,
+    #8134af 75%,
+    #515bd4 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.ig-mark,
+.ig-gradient-ring {
+  background: linear-gradient(135deg, #f58529, #dd2a7b, #8134af, #515bd4);
+}
+
+.ig-gradient-bg {
+  background: linear-gradient(135deg, #f58529, #dd2a7b 50%, #8134af);
+}
+
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  border-radius: 9999px;
+  background: var(--cta);
+  color: #fff;
+  font-weight: 600;
+  font-size: 0.9375rem;
+  padding: 0.8rem 1.35rem;
+  transition: background 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 12px 28px rgba(0, 149, 246, 0.28);
+}
+
+.btn-primary:hover {
+  background: var(--cta-hover);
+  transform: translateY(-1px);
+}
+
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  border-radius: 9999px;
+  border: 1px solid var(--border-strong);
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--fg);
+  font-weight: 600;
+  font-size: 0.9375rem;
+  padding: 0.8rem 1.35rem;
+  transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+.btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.28);
+}
+
+.section-label,
+.section-kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--fg-muted);
+}
+
+.surface {
+  border: 1px solid var(--border);
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 1.25rem;
+}
+
+.prose-site h2 {
+  margin-top: 2rem;
+  margin-bottom: 0.75rem;
+  font-family: var(--font-display), system-ui, sans-serif;
+  font-size: 1.5rem;
+  color: var(--fg);
+}
+
+.prose-site p {
+  margin-bottom: 1rem;
+  line-height: 1.75;
+  color: var(--fg-secondary);
+}
+
+.prose-site ol,
+.prose-site ul {
+  margin-bottom: 1rem;
+  padding-left: 1.25rem;
+  color: var(--fg-secondary);
+}
+
+.prose-site li {
+  margin-bottom: 0.4rem;
+  line-height: 1.65;
+}
+
+.prose-site a,
+.link-inline {
+  color: var(--link);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.link-inline:hover,
+.prose-site a:hover {
+  color: #7dd3fc;
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-up {
+  animation: fade-up 0.65s ease both;
+}
+
+.animate-fade-up-delay {
+  animation: fade-up 0.65s ease 0.12s both;
+}
+
+.animate-fade-up-delay-2 {
+  animation: fade-up 0.65s ease 0.24s both;
+}
+
+::selection {
+  background: rgba(221, 42, 123, 0.35);
+  color: white;
 }
