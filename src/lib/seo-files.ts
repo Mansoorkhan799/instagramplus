@@ -151,7 +151,7 @@ export const SITEMAP_XML = `<?xml version="1.0" encoding="UTF-8"?>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://instagramplusmodapk.com/blog/instagram-plus-features-explained-2026</loc>
+    <loc>https://instagramplusmodapk.com/blog/instagram-plus-features-explained</loc>
     <lastmod>2026-07-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>

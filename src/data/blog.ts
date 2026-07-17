@@ -13,7 +13,7 @@ export type BlogPost = {
 
 export const BLOG_POSTS: BlogPost[] = [
   {
-    slug: "instagram-plus-features-explained-2026",
+    slug: "instagram-plus-features-explained",
     title: "Instagram Plus Features Explained (2026 Complete Guide)",
     description:
       "A complete breakdown of every Instagram Plus feature Meta launched in 2026 — Story Preview, Super Hearts, Spotlight, insights, fonts, and more.",
@@ -53,12 +53,12 @@ export const BLOG_POSTS: BlogPost[] = [
     readingTime: "6 min read",
     tags: ["Download", "APK", "Android"],
     relatedSlugs: [
-      "instagram-plus-features-explained-2026",
+      "instagram-plus-features-explained",
       "instagram-plus-vs-regular-instagram",
     ],
     content: [
       "Downloading an Instagram Plus APK is straightforward when you use a trusted source and follow Android's install prompts carefully. This walkthrough covers the exact flow we recommend on InstagramPlusModAPK.com.",
-      "New to Plus? Start with our [complete Instagram Plus features guide](/blog/instagram-plus-features-explained-2026) so you know what you are installing, or compare plans in [Instagram Plus vs Regular Instagram](/blog/instagram-plus-vs-regular-instagram).",
+      "New to Plus? Start with our [complete Instagram Plus features guide](/blog/instagram-plus-features-explained) so you know what you are installing, or compare plans in [Instagram Plus vs Regular Instagram](/blog/instagram-plus-vs-regular-instagram).",
       "## Before you download",
       "Note the current APK version, file size, and last update date on our [Download Instagram Plus APK](/download) page. Back up important photos if your device is low on storage, and confirm you have a stable Wi-Fi connection.",
       "## Install steps",
@@ -80,12 +80,12 @@ export const BLOG_POSTS: BlogPost[] = [
     readingTime: "5 min read",
     tags: ["Comparison", "Instagram Plus"],
     relatedSlugs: [
-      "instagram-plus-features-explained-2026",
+      "instagram-plus-features-explained",
       "how-to-download-instagram-plus-apk-android",
     ],
     content: [
       "The biggest misconception about Instagram Plus is that Meta is paywalling the core app. That is not the case. Regular Instagram remains free with Reels, Stories, DMs, and the feed you already use.",
-      "Instagram Plus is additive. You keep everything free users have, then unlock optional tools for privacy, story amplification, viewer insights, and personalization. See every tool in our [Instagram Plus features explained](/blog/instagram-plus-features-explained-2026) guide.",
+      "Instagram Plus is additive. You keep everything free users have, then unlock optional tools for privacy, story amplification, viewer insights, and personalization. See every tool in our [Instagram Plus features explained](/blog/instagram-plus-features-explained) guide.",
       "## Who benefits most",
       "Privacy-focused users love [Story Preview](/features/preview-stories) and [Message Preview](/features/preview-messages). Social butterflies get more from [Super Hearts](/features/super-hearts) and [Spotlight](/features/spotlight-story). Creators and power posters gain from [rewatch insights](/features/story-rewatch-insights), [searchable viewers](/features/search-story-viewers), [extra pins](/features/pin-more-posts), and [audience lists](/features/multiple-story-audiences).",
       "## Cost and alternatives",

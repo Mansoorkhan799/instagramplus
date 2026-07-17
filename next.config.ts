@@ -7,6 +7,15 @@ const nextConfig: NextConfig = {
     formats: ["image/avif", "image/webp"],
     deviceSizes: [640, 750, 828, 1080, 1200],
   },
+  async redirects() {
+    return [
+      {
+        source: "/blog/instagram-plus-features-explained-2026",
+        destination: "/blog/instagram-plus-features-explained",
+        permanent: true,
+      },
+    ];
+  },
   async headers() {
     return [
       {
